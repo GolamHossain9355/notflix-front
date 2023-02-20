@@ -1,0 +1,92 @@
+.media-slider__wrapper {
+  box-sizing: border-box;
+  background-color: var(--bg-color-dark);
+  margin-bottom: 25px;
+  margin-right: 6px;
+}
+
+.media-slider__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2.media-slider__head--title {
+  border-bottom: 2px solid red;
+  font-size: 25px;
+  margin: 0 15px;
+}
+
+.media-slider__head--view-all {
+  text-decoration: none;
+  margin: 0 15px;
+  color: white;
+}
+
+.media-slider__cards--wrapper {
+  display: flex;
+  align-items: flex-start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.media-slider__card {
+  position: relative;
+  display: block;
+  scale: .97;
+  margin: 0 auto;
+  transition: scale 0.3s ease-in-out;
+}
+.media-slider__card:hover {
+  scale: 1;
+  transition: scale 0.15s ease-in-out;
+}
+.media-slider__card--image {
+  box-sizing: border-box;
+  width: 300px;
+  border-radius: 10px;
+  aspect-ratio: 30 / 44;
+  transition: scale 0.3s ease-in-out;
+}
+
+.media-slider__bookmark--icon {
+  display: block;
+  position: absolute;
+  top: 18px;
+  right: 23px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgb(159, 152, 152);
+  transition: .3 ease-in-out;
+  z-index: 10;
+}
+.media-slider__bookmark--icon.added {
+  color: rgb(230, 0, 0, 1);
+}
+.media-slider__bookmark--icon:hover {
+  color: rgb(255, 255, 255);
+  transition: .3 ease-in-out;
+}
+
+@media (min-width: 600px){
+
+}
+
+@media (min-width: 900px){
+
+}
+
+@media (min-width: 1200px){
+  
+}
+
+@media (min-width: 1400px){
+  
+}
+
+@media (min-width: 1800px){
+  
+}
+
+@media (min-width: 1900px){
+  
+}

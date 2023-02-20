@@ -1,0 +1,115 @@
+.search-bar__container {
+  --search-input-border-focus: 2px solid white;
+  --search-input-border: 2px solid var(--bg-color);
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.search-bar__container label {
+  position: relative;
+  border-bottom: none;
+}
+
+.search-bar__input {
+  font-size: 2rem;
+  padding: 0.55rem;
+  height: 40px;
+  outline: none;
+  margin-top: 1px;
+  border-top: var(--search-input-border);
+  border-right: var(--search-input-border);
+  border-bottom: var(--search-input-border);
+  border-left: none;
+  background-color: var(--nav-bg-color);
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  color: white;
+  font-weight: lighter;
+}
+
+.searchBar {
+  background-color: var(--nav-bg-color) !important;
+}
+
+.search-bar__input[type="text"] {
+  color: var(--primary-font);
+  cursor: text;
+  caret-color: red;
+  display: block;
+  word-spacing: 5px;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.search-bar__container > input:-webkit-autofill, 
+.search-bar__container > input:-webkit-autofill:focus, 
+.search-bar__container > input:-webkit-autofill:hover, 
+.search-bar__container > input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 2px var(--accent-color) !important;
+          box-shadow: 0 0 0 2px var(--accent-color) !important;
+  font-size: 2rem !important;
+  padding: 0.7rem 0.66rem 0.66rem 0.66rem !important;
+  margin-top: 2px !important;
+  -webkit-text-size-adjust: 2rem;
+}
+
+.search-bar__input:focus {
+  -webkit-box-shadow: 0 0 0 2px var(--accent-color) !important;
+  box-shadow: 0 0 0 2px var(--accent-color) !important;
+}
+
+.search-bar__icon {
+  height: 46px;
+  font-size: var(--search-icon-size);
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  padding: 0.5rem;
+  margin-right: -1px;
+  border-right: none;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  -webkit-box-shadow: 0 0 0 2px var(--accent-color);
+          box-shadow: 0 0 0 2px var(--accent-color);
+  cursor: pointer;
+}
+
+.search-bar__icon:focus {
+  color: white;
+}
+
+@media (min-width: 600px){
+
+}
+
+@media (min-width: 900px){
+
+}
+
+@media (min-width: 1200px){
+  
+}
+
+@media (min-width: 1400px){
+  
+}
+
+@media (min-width: 1800px){
+  
+}
+
+@media (min-width: 1900px){
+  
+}
