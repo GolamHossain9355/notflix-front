@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { deleteBookmark,  getBookmarksWithMediaData } from '../../utils/api';
 import { useAuth } from '../../contexts/AuthContext';
 import Loading from '../components/loading/Loading';
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './bookmarks.css';
 
 export default function Bookmarks() {
@@ -9,11 +11,12 @@ export default function Bookmarks() {
   const [ genres, setGenres ] = useState([])
   const [ show, setShow ]= useState("all");
   const [ refresh, setRefresh ] = useState(true);
+  const [ arrow, setArrow ] = useState(true);
+  const [ sortState, setSortState ] = useState("");
   const { currentUser } = useAuth();
   
   useEffect(() => {
     const abortController = new AbortController();
-    
     getBookmarksWithMediaData({
       userId: currentUser.uid,
       signal: abortController.signal,
@@ -22,10 +25,8 @@ export default function Bookmarks() {
       setBookmarks(response.data);
     })
     .catch(console.error);
-
     return () => abortController.abort();
   }, [currentUser.uid]);
-  
   // Find all genres included in the users bookmarks and set them to the genres state.
   if (bookmarks.length && !genres.length) {
     let result = [];
@@ -40,7 +41,6 @@ export default function Bookmarks() {
   
   const handleDelete = async (cid, mediaId) => {
     const abortController = new AbortController();
-
     try {
       await deleteBookmark({
         user_id: cid,
@@ -52,43 +52,49 @@ export default function Bookmarks() {
         userId: currentUser.uid,
         signal: abortController.signal,
       })
-      
       setBookmarks(response.data);
     } catch (err) {
       console.error(err);
     }
   }
 
-  const handleSort = (event) => {
-    if(event.target.value === "") return;
+  const handleSort = (sortType, direction) => {
+    setSortState(sortType)
     let result;
-
-    // Sort by Year Released
-    if(event.target.value === "yearAsc") result = bookmarks.sort((a,b)=> b.year_released.slice(0, 4) - a.year_released.slice(0, 4));
-    if(event.target.value === "yearDesc") result = bookmarks.sort((a,b)=> a.year_released.slice(0, 4) - b.year_released.slice(0, 4));
-
-    // Sort Alphabetically
-    if (event.target.value === "alphabeticalDesc") {
-      result = bookmarks.sort((a,b)=> {
-        if(a.title < b.title) return -1;
-        if(a.title > b.title) return 1;
-        return 0;
-      });
+    if(direction) {
+      // Sort by Year Released
+      if(sortType === "year") result = bookmarks.sort((a,b)=> b.year_released.slice(0, 4) - a.year_released.slice(0, 4));
+      // Sort Alphabetically
+      if (sortType === "alphabetical") {
+        result = bookmarks.sort((a,b)=> {
+          if(a.title < b.title) return -1;
+          if(a.title > b.title) return 1;
+          return 0;
+        });
+      }
+      // Sort by Imdb Rating
+      if(sortType === "imdb") result = bookmarks.sort((a,b)=> Number(b.imDb_rating) - Number(a.imDb_rating));
+    } else {
+      // Sort by Year Released
+      if(sortType === "year") result = bookmarks.sort((a,b)=> a.year_released.slice(0, 4) - b.year_released.slice(0, 4));
+      // Sort Alphabetically
+      if (sortType === "alphabetical") {
+            result = bookmarks.sort((a,b)=> {
+              if(a.title < b.title) return 1;
+              if(a.title > b.title) return -1;
+              return 0;
+            });
+          }
+      // Sort by Imdb Rating
+      if(sortType === "imdb") result = bookmarks.sort((a,b)=> Number(a.imDb_rating) - Number(b.imDb_rating));
     }
-    if (event.target.value === "alphabeticalAsc") {
-      result = bookmarks.sort((a,b)=> {
-        if(a.title < b.title) return 1;
-        if(a.title > b.title) return -1;
-        return 0;
-      });
-    }
-
-    // Sort by Imdb Rating
-    if(event.target.value === "imdbAsc") result = bookmarks.sort((a,b)=> Number(b.imDb_rating) - Number(a.imDb_rating));
-    if(event.target.value === "imdbDesc") result = bookmarks.sort((a,b)=> Number(a.imDb_rating) - Number(b.imDb_rating));
-
     setBookmarks(result);
     setRefresh(!refresh);
+  }
+
+  const handleArrowClick = () => {
+    if(sortState !== "") handleSort(sortState, !arrow);
+    setArrow(!arrow);
   }
 
   return (
@@ -108,15 +114,16 @@ export default function Bookmarks() {
             </select>
 
             <label htmlFor="sort">Sort:</label>
-            <select className="bookmarks__controls--sort" name="sort" id="sort" onChange={handleSort}>
-              <option value="">Select an Option</option>
-              <option value="alphabeticalAsc">{`Alphabetical (Asc)`}</option>
-              <option value="alphabeticalDesc">{`Alphabetical (Dsc)`}</option>
-              <option value="imdbAsc">{`Imdb Rating (Asc)`}</option>
-              <option value="imdbDesc">{`Imdb Rating (Dsc)`}</option>
-              <option value="yearAsc">{`Year Released (Asc)`}</option>
-              <option value="yearDesc">{`Year Released (Dsc)`}</option>
+            <select className="bookmarks__controls--sort" defaultValue={""} name="sort" id="sort" onChange={(event) => event.target.value !== "" ? handleSort(event.target.value, arrow) : null}>
+              <option disabled={true} value="">Select an Option</option>
+              <option value="alphabetical">{`Alphabetical`}</option>
+              <option value="imdb">{`Imdb Rating`}</option>
+              <option value="year">{`Year Released`}</option>
             </select>
+
+            <button  className={`${arrow ? "arrow-up" : "arrow-down"} arrow-button`} onClick={handleArrowClick}>
+              <FontAwesomeIcon icon={faArrowUp}/>
+            </button>
           </div>
 
           <div className="bookmarks__cards">
@@ -125,7 +132,7 @@ export default function Bookmarks() {
                 return (
                   <div key={i} className="bookmarks__bookmark">
                     <div className="bookmarks_bookmark--title">{bookmark.title}</div>
-                    <div className="bookmarks_bookmark--date">{bookmark.content_rating} - {bookmark.year_released.slice(0, 4)}</div>
+                    <div className="bookmarks_bookmark--info">{bookmark.content_rating} - {bookmark.year_released.slice(0, 4)} - {bookmark.imDb_rating}</div>
                     <a href={`/media/${bookmark.media_id}`}><img src={bookmark.image} alt={bookmark.title} className="bookmarks__bookmark--image"/></a>
                     <button onClick={()=> handleDelete(currentUser.uid, bookmark.media_id)} className="bookmarks_bookmark--remove-button">Delete</button>
                   </div>

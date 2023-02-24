@@ -3,8 +3,11 @@ headers.append("Content-Type", "application/json")
 const API_BASE_URL =
    process.env.REACT_APP_API_BASE_URL || "http://localhost:5001"
 
+   console.log(process.env.REACT_APP_API_BASE_URL)
+
 async function fetchJson(url, options, onCancel = { data: [] }) {
    try {
+
       const response = await fetch(url, options)
 
       if (response.status === 204) return null
