@@ -1,6 +1,6 @@
 .search-bar-icon-only__container {
-  --search-input-border-focus: 2px solid var(--accent-color);
-  --search-input-border: 2px solid var(--bg-color);
+  --search-input-border-focus: 2px solid var(--bright-red);
+  --search-input-border: 2px solid var(--bg-color-dark);
   --search-icon-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,8 +15,8 @@
 
 .search-bar__icon--only {
   font-size: var(--search-icon-size);
-  background-color: var(--accent-color);
-  color: var(--bg-color);
+  background-color: var(--bright-red);
+  color: var(--bg-color-dark);
   padding: 0.5rem;
   margin-right: -1px;
   border-radius: 0.25rem;

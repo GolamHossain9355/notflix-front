@@ -6,10 +6,10 @@
 }
 
 h1.main-title {
-  color: var(--accent-color);
+  color: var(--bright-red);
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 0 18px var(--accent-color);
+  text-shadow: 0 0 18px var(--bright-red);
   letter-spacing: .3em;
   text-indent: 0.5em;
   font-size: 5rem;

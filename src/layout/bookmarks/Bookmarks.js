@@ -105,25 +105,28 @@ export default function Bookmarks() {
         <div>
           <div className="bookmarks__controls">
 
-            <label htmlFor="sort">Show:</label>
-            <select className="bookmarks__controls--sort" name="sort" id="sort" onChange={(event) => setShow(event.target.value)}>
+            <label htmlFor="sort"/>
+            <select tabindex={0} className="bookmarks__controls--sort" defaultValue={""} name="sort" id="sort" onChange={(event) => setShow(event.target.value)}>
+            <option disabled={true} value="">Genres</option>
               <option value="all">All</option>
               {genres.map((genre, i)=>{
                 return ( <option key={i} value={genre}>{genre}</option> )
               })}
             </select>
 
-            <label htmlFor="sort">Sort:</label>
+            <label htmlFor="sort"/>
             <select className="bookmarks__controls--sort" defaultValue={""} name="sort" id="sort" onChange={(event) => event.target.value !== "" ? handleSort(event.target.value, arrow) : null}>
-              <option disabled={true} value="">Select an Option</option>
+              <option disabled={true} value="">Sort By</option>
               <option value="alphabetical">{`Alphabetical`}</option>
               <option value="imdb">{`Imdb Rating`}</option>
               <option value="year">{`Year Released`}</option>
             </select>
 
-            <button  className={`${arrow ? "arrow-up" : "arrow-down"} arrow-button`} onClick={handleArrowClick}>
-              <FontAwesomeIcon icon={faArrowUp}/>
-            </button>
+            <div className="arrow-button__wrapper">
+              <button  className={`${arrow ? "arrow-up" : "arrow-down"} arrow-button`} onClick={handleArrowClick}>
+                <FontAwesomeIcon icon={faArrowUp}/>
+              </button>
+            </div>
           </div>
 
           <div className="bookmarks__cards">

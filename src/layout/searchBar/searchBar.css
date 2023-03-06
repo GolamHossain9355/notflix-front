@@ -1,6 +1,6 @@
 .search-bar__container {
   --search-input-border-focus: 2px solid white;
-  --search-input-border: 2px solid var(--bg-color);
+  --search-input-border: 2px solid var(--bg-color-dark);
 
   display: -webkit-box;
 
@@ -32,7 +32,7 @@
   border-right: var(--search-input-border);
   border-bottom: var(--search-input-border);
   border-left: none;
-  background-color: var(--nav-bg-color);
+  background-color: var(--bg-color-light);
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   color: white;
@@ -40,7 +40,7 @@
 }
 
 .searchBar {
-  background-color: var(--nav-bg-color) !important;
+  background-color: var(--bg-color-light) !important;
 }
 
 .search-bar__input[type="text"] {
@@ -58,8 +58,8 @@
 .search-bar__container > input:-webkit-autofill:focus, 
 .search-bar__container > input:-webkit-autofill:hover, 
 .search-bar__container > input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 2px var(--accent-color) !important;
-          box-shadow: 0 0 0 2px var(--accent-color) !important;
+  -webkit-box-shadow: 0 0 0 2px var(--bright-red) !important;
+          box-shadow: 0 0 0 2px var(--bright-red) !important;
   font-size: 2rem !important;
   padding: 0.7rem 0.66rem 0.66rem 0.66rem !important;
   margin-top: 2px !important;
@@ -67,22 +67,22 @@
 }
 
 .search-bar__input:focus {
-  -webkit-box-shadow: 0 0 0 2px var(--accent-color) !important;
-  box-shadow: 0 0 0 2px var(--accent-color) !important;
+  -webkit-box-shadow: 0 0 0 2px var(--bright-red) !important;
+  box-shadow: 0 0 0 2px var(--bright-red) !important;
 }
 
 .search-bar__icon {
   height: 46px;
   font-size: var(--search-icon-size);
-  background-color: var(--bg-color);
-  color: var(--accent-color);
+  background-color: var(--bg-color-dark);
+  color: var(--bright-red);
   padding: 0.5rem;
   margin-right: -1px;
   border-right: none;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
-  -webkit-box-shadow: 0 0 0 2px var(--accent-color);
-          box-shadow: 0 0 0 2px var(--accent-color);
+  -webkit-box-shadow: 0 0 0 2px var(--bright-red);
+          box-shadow: 0 0 0 2px var(--bright-red);
   cursor: pointer;
 }
 

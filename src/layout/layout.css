@@ -6,15 +6,17 @@
 }
 
 :root {
-  --bg-color: #000000;
-  --bg-color-dark: #080808;
-  --nav-bg-color: #191819;
-  --accent-color: #ff0000;
+  --bg-color: #080808;
+  --bg-color-light: #191819;
+  --bg-color-dark: #000000;
+  
+  --bright-red: #e50914;
+  --dark-red: #ff000056;
 
   --primary-font: #ffffff;
   --diminished-font: #8e8e8e;
 
-  --form-border-color: #ff000056;
+  --form-input-color: #636363;
 
   --menu-active-width: 250px;
   --menu-inactive-width: 0px;
@@ -23,7 +25,6 @@
 
   --search-icon-size: 2.31rem;
 
-  --form-input-color: #636363;
 }
 
 input:-webkit-autofill,
@@ -45,7 +46,7 @@ input:-webkit-autofill:focus {
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--bg-color-dark);
   color: var(--primary-font);
 }
 
@@ -72,7 +73,7 @@ body {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--accent-color);
+    background: var(--bright-red);
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {

@@ -15,12 +15,12 @@ h2 {
 }
 .auth-form-container {
   padding: 30px 40px;
-  background-color: var(--nav-bg-color);
+  background-color: var(--bg-color-light);
   border-radius: 10px;
   border-style: solid;
-  border-color: var(--form-border-color);
-  -webkit-box-shadow: 0 0 15px var(--form-border-color);
-          box-shadow: 0 0 15px var(--form-border-color);
+  border-color: var(--dark-red);
+  -webkit-box-shadow: 0 0 15px var(--dark-red);
+          box-shadow: 0 0 15px var(--dark-red);
   width: 50%;
   max-width: 500px;
 }
@@ -106,7 +106,7 @@ h2 {
   padding: 0.5em 1em;
   font-size: 1.52rem;
   font-weight: lighter;
-  background-color: var(--form-border-color);
+  background-color: var(--dark-red);
   color: white;
   border-radius: .25em;
   border:none;

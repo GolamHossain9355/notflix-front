@@ -4,7 +4,7 @@
 
 .media-page__display-media {
   box-sizing: border-box;
-  background-color: var(--nav-bg-color);
+  background-color: var(--bg-color-light);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,11 +63,11 @@
   letter-spacing: 2px;
 }
 .media-page__genre:hover {
-  border: 2px solid var(--accent-color)
+  border: 2px solid var(--bright-red)
 }
 .media-page__line {
   height: 1px;
-  background-color: var(--accent-color);
+  background-color: var(--bright-red);
   width: 100%;
   margin: 1.5% 0;
 }
@@ -101,7 +101,7 @@
   color: var(--primary-font);
 }
 .wiki-link:active {
-  color: var(--accent-color);
+  color: var(--bright-red);
 }
 
 .star-full, .star-empty {
@@ -109,7 +109,7 @@
 }
 .star-full {
   display: inline-block;
-  color: var(--accent-color);
+  color: var(--bright-red);
 }
 .star-empty {
   display: inline-block;

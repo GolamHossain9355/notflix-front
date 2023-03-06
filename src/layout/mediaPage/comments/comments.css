@@ -8,7 +8,7 @@
   display: inline-grid;
   grid-template-columns: minmax(65px, 45px) 1fr;
   border-radius: 5px;
-  background: var(--nav-bg-color);
+  background: var(--bg-color-light);
   margin: .4rem 0;
   padding: 15px;
   width: 100%;
@@ -62,7 +62,7 @@
   display: block;
   color: white;
   text-decoration: underline;
-  text-decoration-color: var(--accent-color);
+  text-decoration-color: var(--bright-red);
 }
 .new-comment__input {
   resize: none;
@@ -74,13 +74,13 @@
   margin: 0 auto;
   border: 2px solid transparent;
   border-radius: 5px;
-  background: var(--nav-bg-color);
+  background: var(--bg-color-light);
   padding: .5em;
   margin: .4rem 0;
   transition: 100ms ease-in-out;
 }
 .new-comment__input:is(:hover,:focus,:focus-visible,:active) {
-  border: 2px solid var(--form-border-color);
+  border: 2px solid var(--dark-red);
   transition: 100ms ease-in-out;
 }
 .new-comment__form-buttons {
@@ -93,7 +93,7 @@
   border: 2px solid transparent;
   border-radius: .3em;
   padding: .1em 1.2em;
-  background: var(--accent-color);
+  background: var(--bright-red);
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
@@ -125,7 +125,7 @@
     display: grid;
     grid-template-columns: minmax(65px, 45px) 20% minmax(40px, 1fr) minmax(40px, 13%);
     border-radius: 5px;
-    background: var(--nav-bg-color);
+    background: var(--bg-color-light);
     padding: 15px;
     width: 100%;
     margin: .4rem 0;
