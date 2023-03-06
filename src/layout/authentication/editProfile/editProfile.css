@@ -10,7 +10,7 @@ edit-prof__label {
 }
 
 .edit-prof__wrapper {
-  background: var(--nav-bg-color);
+  background: var(--bg-color-light);
   display: flex;
   flex-direction: column;
   width: 85%;
@@ -18,8 +18,8 @@ edit-prof__label {
   padding: 2rem;
   border-radius: 10px;
   border-style: solid;
-  border-color: var(--form-border-color);
-  box-shadow: 0 0 15px var(--form-border-color);
+  border-color: var(--dark-red);
+  box-shadow: 0 0 15px var(--dark-red);
   margin-bottom: 2em;
 }
 
@@ -35,7 +35,7 @@ edit-prof__label {
   color: white;
 }
 .edit-prof__input:focus {
-  box-shadow: 0 0 0 2px var(--accent-color);
+  box-shadow: 0 0 0 2px var(--bright-red);
   transition: 0.15s;
 }
 .edit-prof__input--sub {
@@ -55,7 +55,7 @@ edit-prof__label {
   padding: 5px 1.6rem;
   border: 2px solid transparent;
   border-radius: .3rem;
-  background-color: var(--accent-color);
+  background-color: var(--bright-red);
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.2rem;
@@ -98,7 +98,7 @@ edit-prof__label {
   margin: 0 auto;
 }
 .edit-prof__user-icon {
-  border: 3px solid var(--nav-bg-color);
+  border: 3px solid var(--bg-color-light);
   transition: 300ms ease-in-out;
   cursor: pointer;
 }

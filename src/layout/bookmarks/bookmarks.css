@@ -1,27 +1,50 @@
 .bookmarks__wrapper {
-  margin: 2em 5em;
+  margin: 1.4em 5em;
+  width: 90%;
+  overflow-y:auto;
 }
 
 .bookmarks__controls {
   display: flex;
   justify-content: flex-end;
+  align-content: center;
+  margin-bottom: .3em;
+}
+.bookmarks__controls-type {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 .bookmarks__controls--sort {
   text-align: center;
+  background: black;
+  color: var(--primary-font);
+  padding: .2em 1em;
+  border: 2px solid var(--dark-red);
+  border-radius: 15px;
+  margin: 0 .3em;
 }
+.bookmarks__controls--sort:focus{
+  border: 2px solid var(--bright-red);
+}
+.bookmarks__controls--sort:is(:active,:focus,:checked,:enabled){
+  border: 2px solid var(--dark-red);
+  outline: none;
+}
+
 
 .bookmarks__bookmark {
   align-items: space-between;
   display: grid;
-  grid-template-rows: 3em 1.5em auto 1.5em;
+  grid-template-rows: minmax(20px,auto) 1.5em auto 1.5em;
   text-align: center;
   width: 10.5em;
   border-radius: 5px;
   margin: .4rem .5em;
   padding: .5em;
   border-radius: 5px;
-  background: var(--nav-bg-color);
-  border: 2px solid var(--form-border-color)
+  background: var(--bg-color-light);
+  border: 2px solid var(--dark-red)
 }
 .bookmarks__cards {
   display: flex;
@@ -29,14 +52,15 @@
   justify-content: center;
 }
 .bookmarks_bookmark--title {
-  font-size: 1.1em;
-  font-weight: bold;
-  margin-bottom: .3em;  
+  font-size: 1.2em;
+  font-family: Sans-Serif;
 }
 .bookmarks_bookmark--info {
   margin: auto 0;
   color: var(--diminished-font);
+  font-size: .9em;
   margin-bottom: .3em;  
+  font-family: Serif;
 }
 .bookmarks__bookmark--image {
   max-height: 15em;
@@ -51,7 +75,7 @@
 .bookmarks_bookmark--remove-button {
   align-self: start;
   border-radius: .3em;
-  background: var(--accent-color);
+  background: var(--bright-red);
   border: 2px solid transparent;
   padding: .1em 1.2em;
   cursor: pointer;
@@ -66,13 +90,16 @@
   color: white;
 }
 
+.arrow-button__wrapper {
+  transform: translateY(.2em)
+}
 .arrow-button {
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
-  background: var(--accent-color);
+  background: var(--bright-red);
   color: black;
-  border: 1px solid var(--accent-color);
+  border: 2px solid var(--bright-red);
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -81,9 +108,9 @@
 }
 .arrow-down {
   transform: rotate(180deg);
-  transition: transform 100ms ease-in-out;
+  transition: transform 150ms ease-in-out;
 }
 .arrow-up {
   transform: rotate(0deg);
-  transition: transform 100ms ease-in-out;
+  transition: transform 150ms ease-in-out;
 }
