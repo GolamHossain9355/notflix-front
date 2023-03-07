@@ -83,7 +83,7 @@ export default function MediaPage() {
                     .reduce((total, current) => total + current, 0) /
                     comments.length
                 )}
-                <h2 className="media-page__sub-title">Summery -</h2>
+                <h2 className="media-page__sub-title">Summary -</h2>
                 <article className="media-page__summery">
                   {media.summery}
                 </article>
