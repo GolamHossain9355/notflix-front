@@ -26,6 +26,7 @@
   display: -ms-flexbox;
   display: flex;
   position: absolute;
+  color: black;
   top: 10px;
   right: 10px;
   border: 0;
@@ -39,6 +40,9 @@
 }
 .nav__collapse-button.inactive {
   right: -50px;
+}
+.nav__collapse-button:is(:hover,:active,:focus) {
+  color: white;
 }
 
 .nav__wrapper {
