@@ -9,6 +9,9 @@ function App() {
   const [inactive, setInactive] = useState(true);
   const { currentUser } = useAuth();
 
+  if (!inactive) document.body.classList.add("no-scroll");
+  else document.body.classList.remove("no-scroll");
+
   return (
     <div className="App">
         { currentUser ? ( <Navbar inactive={inactive} setInactive={setInactive} /> )  : "" }

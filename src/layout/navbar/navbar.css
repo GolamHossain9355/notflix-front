@@ -41,7 +41,7 @@
 .nav__collapse-button.inactive {
   right: -50px;
 }
-.nav__collapse-button:is(:hover,:active,:focus) {
+.nav__collapse-button:is(:hover) {
   color: white;
 }
 
