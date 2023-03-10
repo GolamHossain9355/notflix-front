@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import Loading from '../components/loading/Loading';
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 import './bookmarks.css';
 
 export default function Bookmarks() {
@@ -14,6 +15,8 @@ export default function Bookmarks() {
   const [ arrow, setArrow ] = useState(true);
   const [ sortState, setSortState ] = useState("");
   const { currentUser } = useAuth();
+  const [ hovering, setHovering ] = useState(null);
+  const navigate = useNavigate();
   
   useEffect(() => {
     const abortController = new AbortController();
@@ -105,8 +108,8 @@ export default function Bookmarks() {
         <div>
           <div className="bookmarks__controls">
 
-            <label htmlFor="sort"/>
-            <select tabindex={0} className="bookmarks__controls--sort" defaultValue={""} name="sort" id="sort" onChange={(event) => setShow(event.target.value)}>
+            <label htmlFor="genres"/>
+            <select tabIndex={0} className="bookmarks__controls--sort" defaultValue={""} name="sort" id="sort" onChange={(event) => setShow(event.target.value)}>
             <option disabled={true} value="">Genres</option>
               <option value="all">All</option>
               {genres.map((genre, i)=>{
@@ -129,15 +132,25 @@ export default function Bookmarks() {
             </div>
           </div>
 
-          <div className="bookmarks__cards">
+          <div className="bookmarks__card-deck">
             {bookmarks.map((bookmark, i) => {
               if (show === "all" || bookmark.genres.includes(show)) {
                 return (
-                  <div key={i} className="bookmarks__bookmark">
-                    <div className="bookmarks_bookmark--title">{bookmark.title}</div>
-                    <div className="bookmarks_bookmark--info">{bookmark.content_rating} - {bookmark.year_released.slice(0, 4)} - {bookmark.imDb_rating}</div>
-                    <a href={`/media/${bookmark.media_id}`}><img src={bookmark.image} alt={bookmark.title} className="bookmarks__bookmark--image"/></a>
-                    <button onClick={()=> handleDelete(currentUser.uid, bookmark.media_id)} className="bookmarks_bookmark--remove-button">Delete</button>
+                  <div key={i}
+                    className="bookmarks__bookmark"
+                    onClick={()=> navigate(`/media/${bookmark.media_id}`)}
+                    onMouseOver={() => setHovering(i)}
+                    onMouseOut={() => setHovering(null)}
+                  >
+                    <div className="bookmark__grid">
+                      <div className="bookmarks_bookmark--title">{bookmark.title}</div>
+                      <div className="bookmarks_bookmark--info">{bookmark.content_rating} - {bookmark.year_released.slice(0, 4)} - {bookmark.imDb_rating}</div>
+                      <button onClick={(event)=> {
+                          event.stopPropagation()
+                          handleDelete(currentUser.uid, bookmark.media_id)
+                        }} className="bookmarks_bookmark--remove-button">Delete</button>
+                    </div>
+                    <img src={bookmark.image} alt={bookmark.title} className={`bookmarks__bookmark--image ${hovering === i ? "lighten-image" : ""}`}/>
                   </div>
                 )} else { 
                   return null;
