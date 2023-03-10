@@ -14,8 +14,8 @@ export default function Bookmarks() {
   const [ refresh, setRefresh ] = useState(true);
   const [ arrow, setArrow ] = useState(true);
   const [ sortState, setSortState ] = useState("");
-  const { currentUser } = useAuth();
   const [ hovering, setHovering ] = useState(null);
+  const { currentUser } = useAuth();
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -136,19 +136,18 @@ export default function Bookmarks() {
             {bookmarks.map((bookmark, i) => {
               if (show === "all" || bookmark.genres.includes(show)) {
                 return (
-                  <div key={i}
-                    className="bookmarks__bookmark"
-                    onClick={()=> navigate(`/media/${bookmark.media_id}`)}
-                    onMouseOver={() => setHovering(i)}
-                    onMouseOut={() => setHovering(null)}
-                  >
+                  <div key={i} className="bookmarks__bookmark" onClick={()=> navigate(`/media/${bookmark.media_id}`)} onMouseOver={() => setHovering(i)} onMouseOut={() => setHovering(null)}>
                     <div className="bookmark__grid">
                       <div className="bookmarks_bookmark--title">{bookmark.title}</div>
                       <div className="bookmarks_bookmark--info">{bookmark.content_rating} - {bookmark.year_released.slice(0, 4)} - {bookmark.imDb_rating}</div>
-                      <button onClick={(event)=> {
-                          event.stopPropagation()
-                          handleDelete(currentUser.uid, bookmark.media_id)
-                        }} className="bookmarks_bookmark--remove-button">Delete</button>
+                      <button
+                        onClick={(event)=> {
+                            event.stopPropagation()
+                            handleDelete(currentUser.uid, bookmark.media_id)
+                          }} 
+                        className="bookmarks_bookmark--remove-button">
+                          Delete
+                      </button>
                     </div>
                     <img src={bookmark.image} alt={bookmark.title} className={`bookmarks__bookmark--image ${hovering === i ? "lighten-image" : ""}`}/>
                   </div>
