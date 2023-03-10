@@ -42,7 +42,7 @@
   width: 9em;
   margin: .4rem .25em;
   border-radius: 5px;
-  background: black;
+  background-color: #000000;
   border: 2px solid var(--dark-red);
   overflow: hidden;
   position: relative;
@@ -100,6 +100,7 @@
   border-radius: .3em;
   transition: opacity 100ms ease-in-out
 }
+
 .lighten-image{
   opacity: 0.65;
   transition: opacity 85ms ease-in-out
