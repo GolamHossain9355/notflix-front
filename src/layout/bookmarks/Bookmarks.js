@@ -137,18 +137,23 @@ export default function Bookmarks() {
               if (show === "all" || bookmark.genres.includes(show)) {
                 return (
                   <div key={i} className="bookmarks__bookmark" onClick={()=> navigate(`/media/${bookmark.media_id}`)} onMouseOver={() => setHovering(i)} onMouseOut={() => setHovering(null)}>
-                    <div className="bookmark__grid">
-                      <div className="bookmarks_bookmark--title">{bookmark.title}</div>
-                      <div className="bookmarks_bookmark--info">{bookmark.content_rating} - {bookmark.year_released.slice(0, 4)} - {bookmark.imDb_rating}</div>
+                    
+                    <div className="bookmarks_bookmark--remove-button--wrapper">
                       <button
                         onClick={(event)=> {
                             event.stopPropagation()
                             handleDelete(currentUser.uid, bookmark.media_id)
                           }} 
                         className="bookmarks_bookmark--remove-button">
-                          Delete
+                          X
                       </button>
                     </div>
+
+                    <div className="bookmark__grid">
+                      <div className="bookmarks_bookmark--title">{bookmark.title}</div>
+                      <div className="bookmarks_bookmark--info">{bookmark.content_rating} - {bookmark.year_released.slice(0, 4)} - {bookmark.imDb_rating}</div>
+                    </div>
+
                     <img src={bookmark.image} alt={bookmark.title} className={`bookmarks__bookmark--image ${hovering === i ? "lighten-image" : ""}`}/>
                   </div>
                 )} else { 
