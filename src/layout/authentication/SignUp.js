@@ -16,9 +16,8 @@ export default function SignUp() {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match");
-    }
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) return setError("Passwords do not match");
+    if (passwordRef.current.value.length < 6) return setError("Password must be at least 6 characters");
 
     try {
       setError("");
@@ -36,7 +35,7 @@ export default function SignUp() {
   };
 
   return (
-    <>
+    <div>
       <AuthenticationForm
         error={error}
         submitHandler={submitHandler}
@@ -47,6 +46,6 @@ export default function SignUp() {
         loading={loading}
         title="Sign Up"
       />
-    </>
+    </div>
   );
 }
