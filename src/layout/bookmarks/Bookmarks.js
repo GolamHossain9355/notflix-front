@@ -4,7 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import Loading from '../components/loading/Loading';
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
+import BookmarkCard from './components/bookmarkCard/BookmarkCard';
 import './bookmarks.css';
 
 export default function Bookmarks() {
@@ -16,7 +16,6 @@ export default function Bookmarks() {
   const [ sortState, setSortState ] = useState("");
   const [ hovering, setHovering ] = useState(null);
   const { currentUser } = useAuth();
-  const navigate = useNavigate();
   
   useEffect(() => {
     const abortController = new AbortController();
@@ -136,26 +135,15 @@ export default function Bookmarks() {
             {bookmarks.map((bookmark, i) => {
               if (show === "all" || bookmark.genres.includes(show)) {
                 return (
-                  <div key={i} className="bookmarks__bookmark" onClick={()=> navigate(`/media/${bookmark.media_id}`)} onMouseOver={() => setHovering(i)} onMouseOut={() => setHovering(null)}>
-                    
-                    <div className="bookmarks_bookmark--remove-button--wrapper">
-                      <button
-                        onClick={(event)=> {
-                            event.stopPropagation()
-                            handleDelete(currentUser.uid, bookmark.media_id)
-                          }} 
-                        className="bookmarks_bookmark--remove-button">
-                          X
-                      </button>
-                    </div>
-
-                    <div className="bookmark__grid">
-                      <div className="bookmarks_bookmark--title">{bookmark.title}</div>
-                      <div className="bookmarks_bookmark--info">{bookmark.content_rating} - {bookmark.year_released.slice(0, 4)} - {bookmark.imDb_rating}</div>
-                    </div>
-
-                    <img src={bookmark.image} alt={bookmark.title} className={`bookmarks__bookmark--image ${hovering === i ? "lighten-image" : ""}`}/>
-                  </div>
+                  <BookmarkCard
+                    key={i}
+                    bookmark={bookmark}
+                    setHovering={setHovering}
+                    handleDelete={handleDelete}
+                    hovering={hovering}
+                    currentUser={currentUser}
+                    index={i}
+                    />
                 )} else { 
                   return null;
                 }
