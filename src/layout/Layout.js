@@ -10,7 +10,7 @@ export default function Layout() {
 
   useEffect(() => {
     const abortController = new AbortController();
-    listMedia(abortController.signal, "movie", "", "title", "asc", 1000)
+    listMedia(abortController.signal, "movie", "", "year_released", "desc", 1000)
       .then((response) => setMedia(response.data))
       .catch(console.log);
     return () => abortController.abort();
