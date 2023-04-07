@@ -12,10 +12,7 @@ export default function MediaSlider({ title, genre, data }) {
                <div className="media-slider__head">
                   <h2 className="media-slider__head--title">{title}</h2>
                   <div>
-                     <a
-                        className="media-slider__head--view-all"
-                        href={`/genre/${genre}`}
-                     >
+                     <a className="media-slider__head--view-all" href={`/genre/${genre}`}>
                         View All
                      </a>
                   </div>
