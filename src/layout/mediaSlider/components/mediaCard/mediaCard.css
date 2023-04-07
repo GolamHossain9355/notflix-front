@@ -1,0 +1,16 @@
+.media-slider__card {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  scale: .97;
+  transition: scale 0.3s ease-in-out;
+}
+.media-slider__card:hover {
+  scale: 1;
+  transition: scale 0.15s ease-in-out;
+}
+.media-slider__card--image {
+  width: 19.5em;
+  border-radius: 10px;
+  aspect-ratio: 30 / 44;
+}

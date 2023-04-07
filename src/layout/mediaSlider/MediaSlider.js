@@ -1,5 +1,6 @@
-import "./mediaSlider.css"
 import Loading from "../components/loading/Loading"
+import MediaCard from "./components/mediaCard/MediaCard"
+import "./mediaSlider.css"
 
 export default function MediaSlider({ title, genre, data }) {
 
@@ -8,32 +9,17 @@ export default function MediaSlider({ title, genre, data }) {
          {data.length === 0 ? (
             <Loading />
          ) : (
-            <div>
+            <div className="media-slider__grid">
                <div className="media-slider__head">
                   <h2 className="media-slider__head--title">{title}</h2>
-                  <div>
-                     <a className="media-slider__head--view-all" href={`/genre/${genre}`}>
-                        View All
-                     </a>
-                  </div>
+                  <a className="media-slider__head--view-all" href={`/genre/${genre}`}>
+                     View All
+                  </a>
                </div>
-               <div className="media-slider__cards--wrapper">
+               <div className="red-line"/>
+               <div className="media-slider__card-deck">
                   {data.map((media, i) => {
-                     return (
-                        <div className="media-slider__card" key={i}>
-                           <a
-                              href={`/media/${media.media_id}`}
-                              className="media-slider__card"
-                              key={i}
-                           >
-                              <img
-                                 src={media.image}
-                                 className="media-slider__card--image"
-                                 alt={media.title}
-                              />
-                           </a>
-                        </div>
-                     )
+                     return ( <MediaCard key={i} media={media}/> )
                   })}
                </div>
             </div>
