@@ -30,7 +30,7 @@ export default function Layout() {
   };
 
   return (
-    <div>
+    <div className="bottom">
       <Header />
       {/* <FeatureSlider /> */}
       <MediaSlider title="Action" genre="Action" data={extractGenre("Action")} />
