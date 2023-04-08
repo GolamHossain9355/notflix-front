@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import Loading from "../components/loading/Loading.js";
+import Loading from "../components/loading/Loading";
 import { useParams } from "react-router-dom";
-import { listMedia } from "../../utils/api.js";
+import { listMedia } from "../../utils/api";
+import Header from "../components/header/Header"
 import SearchBarIconOnly from "../searchBar/SearchBarIconOnly";
 import "./genrePage.css";
 
@@ -28,6 +29,7 @@ export default function GenrePage() {
 
         <div>
           <SearchBarIconOnly/>
+          <Header title={genre} main={false}/>
           <div className="genre-page__media--grid">
             {medias.map((media, i) => {
               return (

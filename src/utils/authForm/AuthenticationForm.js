@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import Header from "../../layout/components/header/Header";
 import "./authenticationForm.css";
-import Header from "../../layout/header/Header";
 
 export default function AuthenticationForm({
   error,
@@ -15,7 +15,7 @@ export default function AuthenticationForm({
 }) {
   return (
     <div>
-      <Header />
+      <Header title="Notflix" main={false}/>
       <div className="auth-page-container">
         <div className="auth-form-container">
           <h1 className="auth-title">{title}</h1>

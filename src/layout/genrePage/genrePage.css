@@ -1,6 +1,5 @@
 .genre-page__wrapper {
   box-sizing: border-box;
-  margin-top: 13%;
   overflow: auto;
 }
 .genre-page__media--grid {
@@ -20,9 +19,6 @@
 }
 
 @media (min-width: 600px){
-  .genre-page__wrapper {
-    margin-top: 8%;
-  }
   .genre-page__media--grid {
     margin: 0 2%;
     grid-template-columns: repeat(3, 1fr);
@@ -31,7 +27,6 @@
 
 @media (min-width: 900px){
   .genre-page__wrapper {
-    margin-top: 6.5%;
     overflow: auto;
   }
 
@@ -42,9 +37,6 @@
 }
 
 @media (min-width: 1200px){
-  .genre-page__wrapper {
-    margin-top: 60px;
-  }
   .genre-page__media--grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -60,27 +52,18 @@
 }
 
 @media (min-width: 1400px){
-  .genre-page__wrapper {
-    margin-top: 50px;
-  }
   .genre-page__media--grid {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 
 @media (min-width: 1800px){
-  .genre-page__wrapper {
-    margin-top: 50px;
-  }
   .genre-page__media--grid {
     grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @media (min-width: 1900px){
-  .genre-page__wrapper {
-    margin-top: 50px;
-  }
   .genre-page__media--grid {
     margin: 0 1%;
     grid-template-columns: repeat(7, 1fr);

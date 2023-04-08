@@ -1,6 +1,7 @@
 .media-slider__wrapper {
   background-color: var(--bg-color);
   width: 100%;
+  padding: .8em 0;
 }
 
 .media-slider__grid {
@@ -23,13 +24,17 @@
 h2.media-slider__head--title {
   font-size: 1.8em;
   margin-left: 1em;
+  letter-spacing: .15em;
 }
 
 .media-slider__head--view-all {
   text-decoration: none;
   margin-right: 1.5em;
   color: var(--primary-font);
-  font-size: 1.2em;
+  font-size: 1.3em;
+  font-style: italic;
+  font-family: sans-serif;
+  letter-spacing: .1em;
 }
 
 .media-slider__card-deck {

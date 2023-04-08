@@ -10,27 +10,31 @@ import './bookmarks.css';
 export default function Bookmarks() {
   const [ bookmarks, setBookmarks ] = useState([]);
   const [ genres, setGenres ] = useState([])
-  const [ show, setShow ]= useState("all");
-  const [ refresh, setRefresh ] = useState(true);
-  const [ arrow, setArrow ] = useState(true);
+  const [ showGenre, setShowGenre ]= useState("all");
   const [ sortState, setSortState ] = useState("");
+  const [ arrow, setArrow ] = useState(true);
   const [ hovering, setHovering ] = useState(null);
+  const [ refresh, setRefresh ] = useState(true);
   const { currentUser } = useAuth();
   
   useEffect(() => {
     const abortController = new AbortController();
+
     getBookmarksWithMediaData({
       userId: currentUser.uid,
       signal: abortController.signal,
     })
     .then((response) => {
-      setBookmarks(response.data);
+      if(response.data.length > 0) setBookmarks(response.data);
+      else setBookmarks([ "empty" ])
     })
     .catch(console.error);
+
     return () => abortController.abort();
   }, [currentUser.uid]);
+  
   // Find all genres included in the users bookmarks and set them to the genres state.
-  if (bookmarks.length && !genres.length) {
+  if (bookmarks.length && !genres.length && bookmarks[0] !== "empty") {
     let result = [];
     bookmarks.forEach((bookmark) => {
       let current = bookmark.genres.split(", ")
@@ -40,7 +44,8 @@ export default function Bookmarks() {
     });
     setGenres(result);
   }
-  
+
+  // Removal -----------------------------------------------------------------
   const handleDelete = async (cid, mediaId) => {
     const abortController = new AbortController();
     try {
@@ -54,12 +59,14 @@ export default function Bookmarks() {
         userId: currentUser.uid,
         signal: abortController.signal,
       })
-      setBookmarks(response.data);
+      if(response.data.length > 0) setBookmarks(response.data);
+      else setBookmarks([ "empty" ])
     } catch (err) {
       console.error(err);
     }
   }
 
+  // Sorting -----------------------------------------------------------------
   const handleSort = (sortType, direction) => {
     setSortState(sortType)
     let result;
@@ -108,7 +115,7 @@ export default function Bookmarks() {
           <div className="bookmarks__controls">
 
             <label htmlFor="genres"/>
-            <select tabIndex={0} className="bookmarks__controls--sort" defaultValue={""} name="sort" id="sort" onChange={(event) => setShow(event.target.value)}>
+            <select tabIndex={0} className="bookmarks__controls--sort" defaultValue={""} name="sort" id="sort" onChange={(event) => setShowGenre(event.target.value)}>
             <option disabled={true} value="">Genres</option>
               <option value="all">All</option>
               {genres.map((genre, i)=>{
@@ -132,22 +139,25 @@ export default function Bookmarks() {
           </div>
 
           <div className="bookmarks__card-deck">
-            {bookmarks.map((bookmark, i) => {
-              if (show === "all" || bookmark.genres.includes(show)) {
-                return (
-                  <BookmarkCard
-                    key={i}
-                    bookmark={bookmark}
-                    setHovering={setHovering}
-                    handleDelete={handleDelete}
-                    hovering={hovering}
-                    currentUser={currentUser}
-                    index={i}
-                    />
-                )} else { 
-                  return null;
-                }
-            })}
+            { bookmarks[0] !== "empty" 
+              ? ( bookmarks.map((bookmark, i) => {
+                if (showGenre === "all" || bookmark.genres.includes(showGenre)) {
+                    return (
+                      <BookmarkCard
+                        key={i}
+                        bookmark={bookmark}
+                        setHovering={setHovering}
+                        handleDelete={handleDelete}
+                        hovering={hovering}
+                        currentUser={currentUser}
+                        index={i}
+                        />
+                    )} else { 
+                      return null;
+                    }
+              })) 
+              : "Your bookmark list is empty!"
+            }
           </div>
         </div>
       )}
