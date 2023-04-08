@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./layout.css";
-import Header from "./header/Header";
+import Header from "./components/header/Header";
 // import FeatureSlider from "./featureSlider/FeatureSlider";
 import MediaSlider from "./mediaSlider/MediaSlider";
 import { listMedia } from "../utils/api";
@@ -31,7 +31,7 @@ export default function Layout() {
 
   return (
     <div className="bottom">
-      <Header />
+      <Header title="Notflix" main={true}/>
       {/* <FeatureSlider /> */}
       <MediaSlider title="Action" genre="Action" data={extractGenre("Action")} />
       <MediaSlider title={`Kids & Family`} genre="Family" data={extractGenre("Family")} />

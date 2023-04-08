@@ -1,16 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import "./bookmarkCard.css";
 
-export default function BookmarkCard({
-  bookmark,
-  index,
-  setHovering,
-  handleDelete,
-  hovering,
-  currentUser,
-}) {
+export default function BookmarkCard({ bookmark, index, setHovering, handleDelete, hovering, currentUser }) {
   const navigate = useNavigate();
-  console.log(index)
 
   return (
     <div
