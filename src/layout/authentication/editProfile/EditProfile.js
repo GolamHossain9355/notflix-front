@@ -41,6 +41,7 @@ export default function EditProfile({ inactive, setInactive }) {
 
   const { currentUser, updateProfile, updateEmail, updatePassword } = useAuth();
   const navigate = useNavigate();
+  console.log(currentUser)
 
   useEffect(() => { 
     dispatch({type: "selectIMG", payload: Number(currentUser.photoURL)})
@@ -153,12 +154,18 @@ export default function EditProfile({ inactive, setInactive }) {
             })}
           </div>
         </div>
-
-        <div className={`edit-prof__form--submit ${state.clicked ? "" : "hide"}`}>
-          <button className="edit-prof__form--button" type="submit">
-            Save
-          </button>
-        </div>
+        
+        { currentUser.uid === "20X3bcPceNO7rOXo2pQt0rtCWre2" ?
+          <div className={`error round-it ${state.clicked ? "" : "hide"}`} style={{color: 'white', fontSize: '1.1em'}}>
+            Normally, a save button would be shown here, but where normally we would disable access to this screen on the Guest account, we still wanted to be able to display our interface design.
+          </div>
+        :
+          <div className={`edit-prof__form--submit ${state.clicked ? "" : "hide"}`}>
+            <button className="edit-prof__form--button" type="submit">
+              Save
+            </button>
+          </div>
+        }
 
       </form>
     </div>

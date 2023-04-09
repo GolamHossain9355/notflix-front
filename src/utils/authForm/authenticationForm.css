@@ -160,6 +160,27 @@ h2 {
   transition: 0.3s;
 }
 
+.guest-sign-in {
+  display: block;
+  margin-top: 1em;
+}
+.guest-sign-in__button {
+  text-decoration: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: rgb(156, 160, 173);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.guest-sign-in__button:hover {
+  color:white;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
 @media (min-width: 600px){
 
 }

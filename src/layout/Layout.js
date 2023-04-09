@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./layout.css";
+import { listMedia } from "../utils/api";
 import Header from "./components/header/Header";
 // import FeatureSlider from "./featureSlider/FeatureSlider";
 import MediaSlider from "./mediaSlider/MediaSlider";
-import { listMedia } from "../utils/api";
+import "./layout.css";
 
 export default function Layout() {
   const [media, setMedia] = useState([]);

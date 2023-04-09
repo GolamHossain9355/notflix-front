@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackwardFast, faPlay } from "@fortawesome/free-solid-svg-icons";
+import "./navControl.css";
 
 export default function NavControl({ inactive, setInactive }) {
   return (
@@ -13,7 +14,10 @@ export default function NavControl({ inactive, setInactive }) {
             transform="grow-7"
             fixedWidth/>
         ):(
-          <FontAwesomeIcon icon={faPlay} transform="grow-7" fixedWidth />
+          <FontAwesomeIcon
+            icon={faPlay}
+            transform="grow-7"
+            fixedWidth/>
         )}
       </button>
     </div>
