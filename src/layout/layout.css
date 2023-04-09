@@ -64,6 +64,21 @@ body {
   margin-bottom: 5em;
 }
 
+.error {
+  width: 100%;
+  text-align: center;
+  color: var(--bright-red);
+  background-color: var(--dark-red);
+  padding: .4rem 0;
+}
+.error--hide {
+  display: none;
+}
+
+.round-it {
+  border-radius: .3rem;
+}
+
 @media (min-width: 600px){
 
 }

@@ -13,6 +13,12 @@ export default function AuthenticationForm({
   loading,
   title,
 }) {
+
+  const guestLogin = (e) => {
+    emailRef.current.value = "guest@guest.com";
+    passwordRef.current.value = "guestpassword";
+  }
+
   return (
     <div>
       <Header title="Notflix" main={false}/>
@@ -81,17 +87,22 @@ export default function AuthenticationForm({
             </button>
 
             {(title === "Sign In" || title === "Reset Password") && (
-              <div className="auth-alternate-group">
-                <div className="auth-alternate">
-                  Need an account?{" "}
-                  <Link className="auth-alternate-link" to="/sign-up">
-                    Sign Up
-                  </Link>
+              <div>
+                <div className="auth-alternate-group">
+                  <div className="auth-alternate">
+                    Need an account?{" "}
+                    <Link className="auth-alternate-link" to="/sign-up">
+                      Sign Up
+                    </Link>
+                  </div>
+                  <div className="auth-alternate">
+                    <Link className="reset-password-link" to="/reset-password">
+                      Forgot password?
+                    </Link>
+                  </div>
                 </div>
-                <div className="auth-alternate">
-                  <Link className="reset-password-link" to="/reset-password">
-                    Forgot password?
-                  </Link>
+                <div className="guest-sign-in">
+                  <button className="guest-sign-in__button" onClick={() => guestLogin()}>Sign in as a Guest?</button>
                 </div>
               </div>
             )}

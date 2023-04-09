@@ -3,7 +3,6 @@ import Loading from "../components/loading/Loading";
 import { useParams } from "react-router-dom";
 import { listMedia } from "../../utils/api";
 import Header from "../components/header/Header"
-import SearchBarIconOnly from "../searchBar/SearchBarIconOnly";
 import "./genrePage.css";
 
 export default function GenrePage() {
@@ -22,13 +21,13 @@ export default function GenrePage() {
       <div className="genre-page__wrapper">
 
         { medias.length === 0 ? 
-
-        <Loading ht="100vh" size="90"/>
-
+        <div>
+          <Header title={genre} main={false}/>
+          <Loading ht="100vh" size="90"/>
+        </div>
         :
 
         <div>
-          <SearchBarIconOnly/>
           <Header title={genre} main={false}/>
           <div className="genre-page__media--grid">
             {medias.map((media, i) => {
