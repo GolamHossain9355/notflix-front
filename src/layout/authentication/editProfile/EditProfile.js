@@ -41,7 +41,6 @@ export default function EditProfile({ inactive, setInactive }) {
 
   const { currentUser, updateProfile, updateEmail, updatePassword } = useAuth();
   const navigate = useNavigate();
-  console.log(currentUser)
 
   useEffect(() => { 
     dispatch({type: "selectIMG", payload: Number(currentUser.photoURL)})
