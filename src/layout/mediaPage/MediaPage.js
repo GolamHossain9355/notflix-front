@@ -35,18 +35,14 @@ export default function MediaPage() {
 
     for (let i = 0; i < num; i++) {
       rating.push(
-        <div key={rating.length} className="star-full">
-          <FontAwesomeIcon icon={faStar} fixedWidth />
-        </div>
+        <FontAwesomeIcon icon={faStar} fixedWidth key={i} className="star-full"/>
       );
     }
 
     if (rating.length !== 5) {
       for (let i = 5 - rating.length; i > 0; i--) {
         rating.push(
-          <div key={rating.length} className="star-empty">
-            <FontAwesomeIcon icon={faStar} fixedWidth />
-          </div>
+          <FontAwesomeIcon icon={faStar} fixedWidth key={i} className="star-empty"/>
         );
       }
     }
@@ -55,39 +51,39 @@ export default function MediaPage() {
   };
 
   return (
-    <div className="media-page__wrapper">
+    <div>
       {media.length === 0 ? (
         <Loading size="100" ht="100vh" />
       ) : (
-        <div>
+        <>
           <div className="media-page__display-media">
-            <div className="media-page__head--grid">
-              <img
-                src={media.image}
-                className="media-page__image"
-                alt={media.title}
-              />
-              <div>
-                <h1 className="media-page__title">{`${media.title}`} <BookmarkButton mediaId={mediaId}/></h1>
-                <ul className="media-page__title--info">
-                  <li>{media.year_released}</li>
-                  <li>-</li>
-                  <li>{media.content_rating}</li>
-                  <li>-</li>
-                  <li>{media.runtime}</li>
-                </ul>
-                <div className="media-page__line" />
-                {stars(
-                  comments
-                    .map((data) => data.rating)
-                    .reduce((total, current) => total + current, 0) /
-                    comments.length
-                )}
-                <h2 className="media-page__sub-title">Summary -</h2>
-                <article className="media-page__summery">
-                  {media.summery}
-                </article>
-
+            <div className="media-page__main-grid">
+              <img src={media.image} className="media-page__image" alt={media.title}/>
+              <div className="media-page__sub-grid">
+                <div className="media-page__head">
+                  <h1 className="media-page__title">{`${media.title}`}</h1>
+                  <ul className="media-page__info">
+                    <li>{media.year_released}</li>
+                    <li>-</li>
+                    <li>{media.content_rating}</li>
+                    <li>-</li>
+                    <li>{media.runtime}</li>
+                  </ul>
+                  <div>
+                    {stars(comments
+                        .map((data) => data.rating)
+                        .reduce((total, current) => total + current, 0) / comments.length
+                    )}
+                  </div>
+                  <BookmarkButton mediaId={mediaId}/>
+                </div>
+                <div className="red-line" />
+                <div>
+                  <h2 className="media-page__sub-title">Summary -</h2>
+                  <article className="media-page__summery">
+                    {media.summery}
+                  </article>
+                </div>
                 <div className="media-page__sub-content--wrapper">
                   <section>
                     <h2 className="media-page__sub-title">Cast / Crew -</h2>
@@ -140,7 +136,7 @@ export default function MediaPage() {
                 );
               })}
             </div>
-            <div className="media-page__line" />
+            <div className="red-line" />
           </div>
           <Comments
             mediaId={mediaId}
@@ -148,7 +144,7 @@ export default function MediaPage() {
             stars={stars}
             setComments={setComments}
           />
-        </div>
+        </>
       )}
     </div>
   );

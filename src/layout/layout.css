@@ -5,6 +5,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "gotham";
+  src: url("../assets/fonts/gotham-light.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: gotham,sans-serif;
+}
+
 :root {
   --bg-color: #080808;
   --bg-color-light: #191819;
@@ -15,16 +26,12 @@
 
   --primary-font: #ffffff;
   --diminished-font: #8e8e8e;
-
   --form-input-color: #636363;
 
   --menu-active-width: 250px;
   --menu-inactive-width: 0px;
 
   --fast-transition-speed: 0.25s;
-
-  --search-icon-size: 2.31rem;
-
 }
 
 input:-webkit-autofill,

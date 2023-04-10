@@ -20,7 +20,7 @@ export default function Layout() {
     let count = 0;
     let results = [];
     for (let i = 0; i < media.length; i++) {
-      if (count === 6) break;
+      if (count === 7) break;
       if (media[i].genres.includes(genre)) {
         results.push(media[i]);
         count++;

@@ -28,7 +28,6 @@ export default function BookmarkButton({ mediaId }) {
   const handleClick = async (e) => {
     e.stopPropagation();
     const abortController = new AbortController();
-
     try {
       if (isBookmarked) {
         await deleteBookmark({
@@ -71,7 +70,6 @@ export default function BookmarkButton({ mediaId }) {
   return (
     <FontAwesomeIcon
       className={`bookmark-button ${isBookmarked ? "bookmarked" : ""}`}
-      key={1}
       icon={faBookBookmark}
       onClick={(e) => handleClick(e)}/>
   );

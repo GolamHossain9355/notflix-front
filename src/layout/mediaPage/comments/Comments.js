@@ -79,6 +79,7 @@ export default function Comments({ mediaId, data, stars, setComments }) {
         <form onSubmit={submitHandler} className="new-comment__form">
           <div>
             <label className="new-comment__label">New Comment</label>
+            <div className="red-line"/>
             <textarea
               className="new-comment__input"
               type="text"

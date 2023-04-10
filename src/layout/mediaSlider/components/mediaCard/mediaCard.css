@@ -10,7 +10,7 @@
   transition: scale 0.15s ease-in-out;
 }
 .media-slider__card--image {
-  width: 19.5em;
+  width: 17em;
   border-radius: 10px;
   aspect-ratio: 30 / 44;
 }
