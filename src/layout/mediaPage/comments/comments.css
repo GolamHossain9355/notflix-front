@@ -61,8 +61,6 @@
   text-align: left;
   display: block;
   color: white;
-  text-decoration: underline;
-  text-decoration-color: var(--bright-red);
 }
 .new-comment__input {
   resize: none;
