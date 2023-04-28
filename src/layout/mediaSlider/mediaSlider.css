@@ -35,6 +35,10 @@ h2.media-slider__head--title {
   font-size: 1.3em;
   font-family: sans-serif;
   letter-spacing: .1em;
+  cursor: pointer;
+}
+.media-slider__head--view-all:hover{
+  color: white;
 }
 
 .media-slider__card-deck {
@@ -45,26 +49,32 @@ h2.media-slider__head--title {
   margin-top: .2em;
 }
 
-@media (min-width: 600px){
+/* 360 */
+
+@media (min-width: 360px){
 
 }
 
-@media (min-width: 900px){
+@media (min-width: 375px){
 
 }
 
-@media (min-width: 1200px){
-  
+@media (min-width: 411px){
+
 }
 
-@media (min-width: 1400px){
-  
+@media (min-width: 768px){
+
 }
 
-@media (min-width: 1800px){
-  
+@media (min-width: 1024px){
+
 }
 
-@media (min-width: 1900px){
-  
+@media (min-width: 1366px){
+
+}
+
+@media (min-width: 1920px){
+
 }
