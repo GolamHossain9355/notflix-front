@@ -3,12 +3,11 @@
   justify-content: center;
   width: 100%;
   padding: 0;
-  margin-top: 2em;
-  margin-bottom: 1.5em;
+  /* margin-top: 2.5em; */
+  margin-bottom: .7em;
 }
 .header__wrapper.main-wrapper {
-  margin-top: 3em;
-  margin-bottom: 2.5em;
+  margin-top: 4em;
 }
 
 h1.header-title {
@@ -25,16 +24,10 @@ h1.header-title {
   line-height: 1em;
 }
 h1.header-title.main-title {
-  font-size: 15rem;
+  font-size: 5em;
 }
 
 /* 360 */
-
-@media (min-width: 360px){
-  h1.header-title.main-title {
-    font-size: 5em;
-  }
-}
 
 @media (min-width: 375px){
 
@@ -70,6 +63,10 @@ h1.header-title.main-title {
 }
 
 @media (min-width: 1024px){
+  .header__wrapper.main-wrapper {
+    margin-top: 2em;
+  }
+
   h1.header-title.main-title {
     font-size: 12em;
   }
