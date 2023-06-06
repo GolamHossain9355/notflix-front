@@ -12,6 +12,7 @@ export default function MediaCard({ media }){
             src={media.image}
             className="media-slider__card--image"
             alt={media.title}
+            loading="lazy"
         />
       </a>
     </div>

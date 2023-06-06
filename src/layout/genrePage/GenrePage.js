@@ -34,7 +34,7 @@ export default function GenrePage() {
               return (
                 <div className="genre-page__media" key={i}>
                   <a href={`/media/${media.media_id}`}>
-                    <img src={media.image} className="genre-page__media--image" alt={media.title}/>
+                      <img src={media.image} className="genre-page__media--image" loading="lazy" alt={media.title}/>
                   </a>
                 </div>
               );
