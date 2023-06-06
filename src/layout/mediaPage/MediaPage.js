@@ -77,7 +77,7 @@ export default function MediaPage() {
                   </div>
                   <BookmarkButton mediaId={mediaId}/>
                 </div>
-                <div className="red-line" />
+                  <div className="red-line" />
                 <div>
                   <h2 className="media-page__sub-title">Summary -</h2>
                   <article className="media-page__summery">
@@ -86,7 +86,7 @@ export default function MediaPage() {
                 </div>
                 <div className="media-page__sub-content--wrapper">
                   <section>
-                    <h2 className="media-page__sub-title">Cast / Crew -</h2>
+                    <h2 className="media-page__sub-title">Notable Crew -</h2>
                     <ul className="media-page__sub-content--list">
                       {media.cast.split(", ").map((member, i) => {
                         return (

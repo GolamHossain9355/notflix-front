@@ -1,13 +1,10 @@
 .media-page__display-media {
-  box-sizing: border-box;
   background-color: var(--bg-color-light);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 3px;
-  margin: 0 auto 0;
   width: 100%;
-  padding: .8em;
+  box-sizing: border-box;
 }
 
 .media-page__main-grid {
@@ -20,34 +17,51 @@
 }
 
 .media-page__head {
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: .5rem;
 }
 .media-page__title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: normal;
+  line-height: 1;
 }
 
 .media-page__info {
+  padding: 0;
+  margin: .3em auto;
   display: flex;
-  gap: .5em;
   font-size: 1rem;
   list-style: none;
-  line-height: 0;
+}
+.media-page__info li {
+  margin: 0 .3rem;
 }
 
 .media-page__sub-title {
-  margin-bottom: .3em;
-  font-size: 1.4em;
+  margin: .3em 0.5em;
+  font-size: 1.5em;
+}
+section > .media-page__sub-title {
+  font-size: 1.1em;
+  margin-left: 0;
+  margin-top: 0;
 }
 
 .media-page__image {
-  margin: 0 auto;
+  margin: 3.3rem auto 0;
   width: 20rem;
 }
 .media-page__genres--wrapper {
-  width: 75%;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 .media-page__genre {
   color: var(--primary-font);
@@ -55,8 +69,9 @@
   background-color: transparent;
   border: .2em solid hsl(0, 0%, 19%);
   border-radius: 1em;
-  margin-right: 1em;
-  padding: 0.2em 1.3em;
+  padding: 0.2em 1em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
@@ -70,22 +85,25 @@
   color: var(--primary-font);
   font-size: 1.1em;
   line-height: 1.4em;
-  margin-left: 1.4em;
+  margin: 0 2em;
 }
 .media-page__sub-content--wrapper {
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  margin: 3% 10% 0;
-  width: 55%;
+  grid-template-rows: repeat(2,fit-content);
+  margin: .8em 1.4em .5em;
+  width: 100%;
   font-size: 1.2em;
 }
 .media-page__sub-content--list {
-  margin-top: 8px;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 .media-page__sub-content--item {
   color: var(--diminished-font);
   margin-bottom: .6rem;
+  margin-left: 1.4em;
 }
 
 .wiki-link {
@@ -124,38 +142,97 @@
   color: var(--primary-font);
 }
 
-@media (min-width: 600px){
+/* 360 */
+
+@media (min-width: 375px){
 }
 
-@media (min-width: 900px){
+@media (min-width: 411px){
 }
 
-@media (min-width: 1200px){
-  .media-page__main-grid {
-    grid-template-columns: 20rem auto;
-    gap: 2em;
+@media (min-width: 768px){
+  .media-page__head {
+    justify-content:center;
+    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
   }
+
+  .media-page__image {
+    margin: 0.7rem auto 1rem;
+    width: 30rem;
+  }
+
+  .media-page__title {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  .media-page__info {
+    margin: .3em 0.5em;
+    margin-top: 1em;
+  }
+
+  .media-page__sub-content--wrapper {
+    width: 55%;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .media-page__genres--wrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1024px){
+}
+
+@media (min-width: 1366px){
   .media-page__display-media {
-    width: 90%;
+    border-radius: 5px;
+    width: 92%;
+    overflow: hidden;
     margin: 1.3em auto 0;
   }
+
+  .media-page__main-grid {
+    grid-template-columns: 20.5rem auto;
+  }
+
+  .media-page__image {
+    border-radius: 5px;
+    width: 20rem;
+    margin: 0.5rem;
+  }
+
   .media-page__sub-content--wrapper {
     margin: 0;
-    margin-left: 1.4em;
+    margin-left: 1em;
     margin-top: 1.2em;
   }
+
+  .media-page__sub-grid {
+    grid-template-rows: repeat(3, fit-content(100%));
+  }
+
   .media-page__genres--wrapper {
     width: 100%;
-    margin-bottom: .6em;
-    margin-top: .6em;
+    margin-bottom: .3em;
+    margin-top: .3em;
+  }
+
+  .media-page__title {
+    margin-top: 0.5rem;
   }
 }
 
-@media (min-width: 1400px){
-}
-
-@media (min-width: 1800px){
-}
-
-@media (min-width: 1900px){
+@media (min-width: 1920px){
+  .media-page__title {
+    font-size: 2.5rem;
+    width: auto;
+  }
+  .media-page__head {
+    justify-content: space-between;
+    margin: 0 0.5em;
+  }
 }
