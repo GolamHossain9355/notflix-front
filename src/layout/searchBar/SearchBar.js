@@ -18,12 +18,13 @@ export default function SearchBar() {
 
     async function loadFoundMedia() {
       try {
-        const data = await listMediaBySearchWord({
+        const response = await listMediaBySearchWord({
           searchWord: searchWord,
           limit: 12,
           signal: abortcontroller.signal,
         });
-        setFoundMedia(data);
+        if (response.data.length) setFoundMedia(response.data);
+        else if (!response.data.length && searchWord.length > 0) setFoundMedia(["empty"])
       } catch (e) {
         console.error(e);
       }
@@ -37,43 +38,44 @@ export default function SearchBar() {
 
   return (
     <>
-      <div className="search-bar__container">
-        <label htmlFor="searchBar">
-          <FontAwesomeIcon
-            className="search-bar__icon"
-            icon={faMagnifyingGlass}
-          />
-        </label>
-        <input
-          className="search-bar__input"
-          type="text"
-          id="searchBar"
-          onChange={(event) => setSearchWord(event.target.value)}
-        />
+      <div className="search-bar">
+        <div>
+          <input
+            className="search-bar__input"
+            type="text"
+            id="searchBar"
+            onChange={(event) => setSearchWord(event.target.value)}
+            autoComplete="off"
+            />
+          <div className="search-bar__submit">
+            <FontAwesomeIcon className="search-bar__icon" icon={faMagnifyingGlass} />
+          </div>
+        </div>
       </div>
+
       <div className="genre-page__wrapper">
-        {foundMedia.data?.length === 0 ? (
-          <Loading ht="100vh" size="90" />
+        {foundMedia.length === 0 && searchWord.length ? (
+          <Loading size="90" />
         ) : (
           <div>
             <div className="genre-page__media--grid">
-              {foundMedia.data?.map((media, i) => {
-                return (
-                  <div className="genre-page__media" key={i}>
-                    <a href={`/media/${media.media_id}`}>
-                      <img
-                        src={media.image}
-                        className="genre-page__media--image"
-                        alt={media.title}
-                      />
-                    </a>
-                  </div>
-                );
-              })}
+              { foundMedia[0] !== "empty" &&
+                  foundMedia?.map((media, i) => {
+                    return (
+                      <div className="genre-page__media" key={i}>
+                        <a href={`/media/${media.media_id}`}>
+                          <img src={media.image} className="genre-page__media--image" alt={media.title} />
+                        </a>
+                      </div>
+                    )})
+              }
             </div>
           </div>
         )}
       </div>
+      {foundMedia[0] === "empty" &&
+        <div className="no-results">Your search returned no results.</div>
+      }
     </>
   );
 }

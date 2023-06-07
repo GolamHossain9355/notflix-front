@@ -27,6 +27,9 @@
   --primary-font: #ffffff;
   --diminished-font: #8e8e8e;
   --form-input-color: #636363;
+  
+  --search-input-border-focus: 2px solid white;
+  --search-input-border: 2px solid var(--bg-color-dark);
 
   --menu-active-width: 250px;
   --menu-inactive-width: 0px;
