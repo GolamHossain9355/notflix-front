@@ -36,12 +36,14 @@
   }
 }
 
-@media (min-width: 768px){
+@media (min-width: 640px){
   .genre-page__media--grid {
     grid-template-columns: repeat(4, 1fr);
     gap: .1em .7em;
   }
+}
 
+@media (min-width: 768px){
   .genre-page__media--image {
     width: 10.9em;
   }

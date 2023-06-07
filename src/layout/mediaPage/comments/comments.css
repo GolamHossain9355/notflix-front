@@ -1,66 +1,18 @@
 .comments__wrapper {
-  width: 98%;
-  margin: 1% auto;
-}
-
-.comment {
   box-sizing: border-box;
-  display: inline-grid;
-  grid-template-columns: minmax(65px, 45px) 1fr;
-  border-radius: 5px;
-  background: var(--bg-color-light);
-  margin: .4rem 0;
-  padding: 15px;
   width: 100%;
-}
-.span-2 {
-  grid-column: span 2;
-}
-.comment__info-wrapper {
-  display: inline-grid;
-  grid-template-columns: 40% 1fr 1fr;
-  align-items: center;
-}
-
-.comment__user-icon {
-  border-radius: 50%;
-  width: 4.5em;
-}
-.comment__user-icon--wrapper {
-  display: inline-block;
-}
-.comment__user-name {
-  font-size: 1.3rem;
-  margin-left: .5rem;
-}
-.comment__rating {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: .7rem 0;
-}
-.comment__date {
-  margin: 0 .3rem;
-  font-size: 1rem;
-  font-style: bold;
-  text-align: center;
-}
-.comment__body {
-  display: inline-block;
-  font-size: 1.3rem;
-  margin: 1rem 1rem 0;
-  font-style: italic;
+  margin: 0 auto;
 }
 
 .new-comment__form {
   text-align: center;
-
 }
 .new-comment__label {
   font-size: 1.3rem;
   text-align: left;
   display: block;
   color: white;
+  margin-top: 1rem;
 }
 .new-comment__input {
   resize: none;
@@ -104,43 +56,23 @@
   margin-bottom: 20em;
 }
 
-@media (min-width: 600px){
+/* 360 */
+
+@media (min-width: 375px){
 }
 
-@media (min-width: 900px) {
-  .comments__wrapper {
-    width: 90%;
-  }
+@media (min-width: 411px){
 }
 
-@media (min-width: 1200px){
+@media (min-width: 768px){
+}
+
+@media (min-width: 1024px){
+}
+
+@media (min-width: 1366px){
   .comments__wrapper {
     width: 80%;
-  }
-
-  .comment {
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: minmax(65px, 45px) 20% minmax(40px, 1fr) minmax(40px, 13%);
-    border-radius: 5px;
-    background: var(--bg-color-light);
-    padding: 15px;
-    width: 100%;
-    margin: .4rem 0;
-  }
-  .comment__body {
-    margin: auto 1rem;
-  }
-  .comment__remove {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .delete {
-    font-size: .9em;
-    letter-spacing: 0;
   }
 
   .comment__info-wrapper {
@@ -148,20 +80,7 @@
     flex-direction: column;
     text-align: center;
   }
-  
-  .span-2 {
-    grid-column: span 1;
-  }
 }
 
-@media (min-width: 1400px) {
-}
-
-@media (min-width: 1800px) {
-  .comment {
-    grid-template-columns: minmax(65px, 45px) 12% minmax(40px, 1fr) minmax(40px, 50px);
-  }
-}
-
-@media (min-width: 1900px) {
+@media (min-width: 1920px){
 }
