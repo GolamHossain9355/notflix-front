@@ -13,7 +13,6 @@ export default function Bookmarks() {
   const [ showGenre, setShowGenre ]= useState("all");
   const [ sortState, setSortState ] = useState("");
   const [ arrow, setArrow ] = useState(true);
-  const [ hovering, setHovering ] = useState(null);
   const [ refresh, setRefresh ] = useState(true);
   const { currentUser } = useAuth();
   
@@ -146,9 +145,7 @@ export default function Bookmarks() {
                       <BookmarkCard
                         key={i}
                         bookmark={bookmark}
-                        setHovering={setHovering}
                         handleDelete={handleDelete}
-                        hovering={hovering}
                         currentUser={currentUser}
                         index={i}
                         />
