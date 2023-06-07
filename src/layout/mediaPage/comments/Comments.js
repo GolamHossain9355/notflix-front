@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { createComment, deleteComment, getComments } from "../../../utils/api";
-import profileImages from "../../../data/profileImages";
+import { createComment, getComments } from "../../../utils/api";
+import Comment from "./comment/Comment";
 import "./comments.css";
 
 export default function Comments({ mediaId, data, stars, setComments }) {
@@ -54,25 +54,6 @@ export default function Comments({ mediaId, data, stars, setComments }) {
     );
   }
 
-  const handleDelete = async (cid) => {
-    const abortController = new AbortController();
-    try {
-      await deleteComment({
-        media_id: mediaId,
-        comment_id: cid,
-        signal: abortController.signal,
-      });
-      const response = await getComments({
-        mediaId,
-        signal: abortController.signal,
-      });
-      setComments({ type: "setComments", payload: response.data});
-    } catch (err) {
-      console.error(err);
-    }
-    return () => abortController.abort();
-  };
-
   return (
     <div className="comments__wrapper">
       <div className="">
@@ -102,31 +83,13 @@ export default function Comments({ mediaId, data, stars, setComments }) {
       <div className="comments__comments-display">
         {data.map((comment, i) => {
           return (
-            <div key={i} className="comment">
-              <img
-                className="comment__user-icon"
-                alt="User Icon"
-                src={profileImages[Number(comment.user_image)].img}
-              />
-
-              <div className="comment__info-wrapper">
-                <div className="comment__user-name">{comment.display_name}</div>
-                <div className="comment__rating">{stars(comment.rating)}</div>
-                <div className="comment__date">{comment.date}</div>
-              </div>
-
-              <div className="comment__body span-2">" {comment.body} "</div>
-
-              <div className="comment__remove">
-                {comment.user_id === currentUser.uid && (
-                  <button
-                    onClick={() => handleDelete(comment.comment_id)}
-                    className="new-comment__submit delete">
-                    Delete
-                  </button>
-                )}
-              </div>
-            </div>
+            <Comment
+              key={comment.cid}
+              comment={comment}
+              mediaId={mediaId}
+              setComments={setComments}
+              stars={stars}
+            />
           );
         })}
       </div>

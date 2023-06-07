@@ -1,28 +1,23 @@
-edit-prof__label {
+.edit-prof__label {
   display: block;
-  margin-bottom: 6px;
-  margin-top: .5rem;
+  margin: 1rem 0;
   cursor: pointer;
   border-bottom: 2px solid red;
   color: white;
   font-size: 1.3rem;
   text-transform: capitalize;
+  line-height: 1.5;
 }
 
 .edit-prof__wrapper {
+  box-sizing: border-box;
   background: var(--bg-color-light);
   display: flex;
   flex-direction: column;
-  width: 85%;
-  margin: 3.2rem auto 0;
-  padding: 2rem;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: var(--dark-red);
-  box-shadow: 0 0 15px var(--dark-red);
-  margin-bottom: 2em;
+  padding: 2.5rem 1rem;
+  width: 100%;
+  min-height: 100vh;
 }
-
 
 .edit-prof__input {
   background-color: var(--form-input-color);
@@ -31,7 +26,6 @@ edit-prof__label {
   border: none;
   border-radius: 0.25em;
   font-size: 1.25rem;
-  font-weight: lighter;
   color: white;
 }
 .edit-prof__input:focus {
@@ -52,7 +46,7 @@ edit-prof__label {
   justify-content: flex-end;
 }
 .edit-prof__form--button {
-  padding: 5px 1.6rem;
+  padding: 0.1rem 1.6rem;
   border: 2px solid transparent;
   border-radius: .3rem;
   background-color: var(--bright-red);
@@ -74,26 +68,26 @@ edit-prof__label {
 
 .display-button {
   display: block;
-  border: 0;
-  background: transparent;
-  align-self: start;
   margin: 1rem 0;
-  padding: 0;
+  cursor: pointer;
+  border: 0;
+  border-bottom: 2px solid red;
+  color: white;
   font-size: 1.3rem;
   text-transform: capitalize;
-  color: white;
-  border-bottom: 2px solid red;
-  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  align-self: start;
+  line-height: 1.5;
 }
 
 .hide {
   display: none;
 }
 
-
 .edit-prof__user-icon--grid {
   display: grid;
-  grid-template-columns: repeat(4,100px);
+  grid-template-columns: repeat(3,100px);
   gap: .2rem .5rem;
   margin: 0 auto;
 }
@@ -118,32 +112,32 @@ edit-prof__label {
   transition: 0s;
 }
 
-@media (min-width: 600px){
+/* 360 */
 
+@media (min-width: 375px){
 }
 
-@media (min-width: 900px){
+@media (min-width: 411px){
+}
+
+@media (min-width: 768px){
   .edit-prof__user-icon--grid {
     grid-template-columns: repeat(6,100px);
   }
-
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1024px){
+}
+
+@media (min-width: 1366px){
   .edit-prof__wrapper {
-    width: 75%;
-    margin-top: 2rem;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    min-height: 0;
+    padding: 1.5rem;
   }
 }
 
-@media (min-width: 1400px){
-  
-}
-
-@media (min-width: 1800px){
-  
-}
-
-@media (min-width: 1900px){
-  
+@media (min-width: 1920px){
 }

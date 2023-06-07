@@ -80,7 +80,7 @@ export default function EditProfile({ inactive, setInactive }) {
   return (
     <div className="edit-prof__wrapper">
       <div className={`${!error.active ? "error--hide" : "error"}`}>{error.message}</div>
-      <form className="edit-prof__form" onSubmit={submitHandler}>
+      <form onSubmit={submitHandler}>
         
       <button type="button" className={`display-button ${state.username ? "hide" : ""}`} onClick={() => handleButtonClick("username")}>Change Username</button>
         <div className={`edit-prof__input--section ${ state.username ? "" : "hide" }`}>
