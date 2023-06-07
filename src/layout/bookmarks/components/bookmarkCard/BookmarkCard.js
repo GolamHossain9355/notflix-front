@@ -1,15 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import "./bookmarkCard.css";
 
-export default function BookmarkCard({ bookmark, index, setHovering, handleDelete, hovering, currentUser }) {
+export default function BookmarkCard({ bookmark, index, handleDelete, currentUser }) {
   const navigate = useNavigate();
 
   return (
     <div
       className="bookmarks__bookmark"
       onClick={() => navigate(`/media/${bookmark.media_id}`)}
-      onMouseOver={() => setHovering(index)}
-      onMouseOut={() => setHovering(null)}
     >
       <div className="bookmarks_bookmark--remove-button--wrapper">
         <button
@@ -34,9 +32,8 @@ export default function BookmarkCard({ bookmark, index, setHovering, handleDelet
       <img
         src={bookmark.image}
         alt={bookmark.title}
-        className={`bookmarks__bookmark--image ${
-          hovering === index ? "lighten-image" : ""
-        }`}
+        className={`bookmarks__bookmark--image`}
+        loading="lazy"
       />
     </div>
   );
