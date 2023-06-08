@@ -1,5 +1,6 @@
-import { useAuth } from "../../../contexts/AuthContext";
-import profileImages from "../../../data/profileImages";
+import { useAuth } from "../../../../contexts/AuthContext";
+import profileImages from "../../../../data/profileImages";
+import "./navProfile.css";
 
 export default function NavProfile() {
   const { currentUser } = useAuth();

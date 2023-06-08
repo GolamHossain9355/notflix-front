@@ -20,7 +20,7 @@ export default function AuthenticationForm({
   }
 
   return (
-    <div>
+    <>
       <Header title="Notflix" main={false}/>
       <div className="auth-page-container">
         <div className="auth-form-container">
@@ -117,6 +117,6 @@ export default function AuthenticationForm({
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 }
