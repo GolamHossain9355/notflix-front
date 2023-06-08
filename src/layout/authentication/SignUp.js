@@ -35,7 +35,7 @@ export default function SignUp() {
   };
 
   return (
-    <div>
+    <>
       <AuthenticationForm
         error={error}
         submitHandler={submitHandler}
@@ -46,6 +46,6 @@ export default function SignUp() {
         loading={loading}
         title="Sign Up"
       />
-    </div>
+    </>
   );
 }

@@ -31,13 +31,36 @@ export default function Layout() {
 
   return (
     <div className="bottom">
-      <Header title="Notflix" main={true}/>
+      <Header
+        title="Notflix"
+        main={true}
+      />
       {/* <FeatureSlider /> */}
-      <MediaSlider title="Action" genre="Action" data={extractGenre("Action")} />
-      <MediaSlider title={`Kids & Family`} genre="Family" data={extractGenre("Family")} />
-      <MediaSlider title="Drama" genre="Drama" data={extractGenre("Drama")} />
-      <MediaSlider title="Comedy" genre="Comedy" data={extractGenre("Comedy")} />
-      <MediaSlider title="Music & Musicals" genre="Musical" data={extractGenre("Musical")} />
+      <MediaSlider
+        title="Action"
+        genre="Action"
+        data={extractGenre("Action")}
+      />
+      <MediaSlider
+        title={`Kids & Family`}
+        genre="Family"
+        data={extractGenre("Family")}
+      />
+      <MediaSlider
+        title="Drama"
+        genre="Drama"
+        data={extractGenre("Drama")}
+      />
+      <MediaSlider
+        title="Comedy"
+        genre="Comedy"
+        data={extractGenre("Comedy")}
+      />
+      <MediaSlider
+        title="Music & Musicals"
+        genre="Musical"
+        data={extractGenre("Musical")}
+      />
     </div>
   );
 }

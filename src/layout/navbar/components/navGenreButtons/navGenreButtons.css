@@ -1,0 +1,32 @@
+.nav__genre-buttons--wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color-light);
+  margin-bottom: 5px;
+}
+
+.nav__genre-button {
+  border-left: solid 4px transparent;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #9c9a9c;
+  padding: .6rem .7rem;
+  text-align: center;
+  transition: border-left .2s;
+}
+.nav__genre-button:hover, .nav__genre-button:active {
+  border-left: solid 4px var(--bright-red);
+  color: #FFF;
+  background: var(--dark-red);
+  transition: border-left 0s;
+}
+
+@media (min-width: 1366px){
+  .nav__genre-button {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
