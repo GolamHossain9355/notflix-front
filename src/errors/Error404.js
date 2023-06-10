@@ -5,7 +5,6 @@ export default function Error404() {
   const navigate = useNavigate();
   
   return (
-    <div className="error__screen">
       <div className="error__wrapper">
         <div className="error__title--wrapper">
           <div className="error__title">404</div>
@@ -16,6 +15,5 @@ export default function Error404() {
           <button className="link" onClick={()=> navigate(-1)}>Go Back ?</button>
         </div>
       </div>
-    </div>
   );
 }
