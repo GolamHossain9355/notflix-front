@@ -91,24 +91,10 @@
   transition: opacity 85ms ease-in-out;
 }
 
-/* 360 */
-
-@media (min-width: 375px){
-}
-
-@media (min-width: 411px){
-}
-
-@media (min-width: 768px){
-}
-
 @media (min-width: 1024px){
   .bookmarks__bookmark {
     width: 10em;
   }
-}
-
-@media (min-width: 1366px){
 }
 
 @media (min-width: 1920px){

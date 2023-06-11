@@ -18,26 +18,9 @@
   color: white;
 }
 
-/* 360 */
-
-@media (min-width: 375px){
-}
-
-@media (min-width: 411px){
-}
-
-@media (min-width: 768px){
-}
-
-@media (min-width: 1024px){
-}
-
 @media (min-width: 1366px){
   .nav__collapse-button.inactive {
     right: -50px;
     transition: right var(--fast-transition-speed) ease-in-out;
   }
-}
-
-@media (min-width: 1920px){
 }

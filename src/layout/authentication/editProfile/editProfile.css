@@ -98,9 +98,6 @@
 }
 .edit-prof__user-icon:hover {
   transform-origin: center;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  -moz-transform-origin: center;
   scale: 1.1;
   border-radius: .2rem;
   transition: 100ms ease-in-out;
@@ -111,8 +108,6 @@
   border-radius: .2rem;
   transition: 0s;
 }
-
-/* 360 */
 
 @media (min-width: 768px){
   .edit-prof__user-icon--grid {

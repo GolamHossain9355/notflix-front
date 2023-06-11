@@ -58,14 +58,6 @@
   transition: 50ms ease-in-out;
 }
 
-/* 360 */
-
-@media (min-width: 375px){
-}
-
-@media (min-width: 411px){
-}
-
 @media (min-width: 768px){
   .error__wrapper {
     margin: 15rem auto;
@@ -82,12 +74,6 @@
   .link {
     margin: 0 3em;
   }
-}
-
-@media (min-width: 1024px){
-}
-
-@media (min-width: 1366px){
 }
 
 @media (min-width: 1920px){

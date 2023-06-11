@@ -64,17 +64,6 @@
   transition: transform 150ms ease-in-out;
 }
 
-/* 360 */
-
-@media (min-width: 375px){
-}
-
-@media (min-width: 411px){
-}
-
-@media (min-width: 768px){
-}
-
 @media (min-width: 1024px){
   .bookmarks__controls {
     justify-content: flex-end;
@@ -92,7 +81,4 @@
     padding: .2em 1em;
     margin: 0 .3em;
   }
-}
-
-@media (min-width: 1920px){
 }

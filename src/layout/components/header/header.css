@@ -27,12 +27,6 @@ h1.header-title.main-title {
   font-size: 5em;
 }
 
-/* 360 */
-
-@media (min-width: 375px){
-
-}
-
 @media (min-width: 411px){
   .header__wrapper {
     margin-top: 2.8em;
