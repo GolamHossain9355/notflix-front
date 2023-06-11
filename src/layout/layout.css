@@ -47,6 +47,21 @@ input:-webkit-autofill:active {
   caret-color: white;
 }
 
+::-webkit-scrollbar {
+  width: .7em;
+  height: .7em;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bright-red);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
 input:-webkit-autofill:focus {
   box-shadow: 0 0 0 2px white !important;
 }
@@ -84,27 +99,7 @@ body {
   border-radius: .3rem;
 }
 
-@media (min-width: 600px){
-}
-
-@media (min-width: 900px){
-}
-
-@media (min-width: 1200px){
-  ::-webkit-scrollbar {
-    width: .7em;
-    height: .7em;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--bright-red);
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    cursor: pointer;
-  }
+@media (min-width: 1366px){
 
   .mainscreen {
     padding-left: var(--menu-active-width);
@@ -119,11 +114,5 @@ body {
   }
 }
 
-@media (min-width: 1400px){
-}
-
-@media (min-width: 1800px){
-}
-
-@media (min-width: 1900px){
+@media (min-width: 1920px){
 }

@@ -22,8 +22,6 @@
   margin-bottom: 20px;
 }
 
-/* 360 */
-
 @media (min-width: 375px){
   .genre-page__media--image {
     width: 7.3em;

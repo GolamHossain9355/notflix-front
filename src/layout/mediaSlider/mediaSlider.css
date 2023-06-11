@@ -50,16 +50,10 @@ h2.media-slider__head--title {
   margin-top: .2em;
 }
 
-/* 360 */
-
 @media (min-width: 375px){
   .media-slider__wrapper {
     padding-bottom: .8em;
   }
-}
-
-@media (min-width: 411px){
-
 }
 
 @media (min-width: 768px){
@@ -70,14 +64,6 @@ h2.media-slider__head--title {
   .media-slider__head--view-all {
     margin-right: 1em;
   }
-}
-
-@media (min-width: 1024px){
-
-}
-
-@media (min-width: 1366px){
-
 }
 
 @media (min-width: 1920px){

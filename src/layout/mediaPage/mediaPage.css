@@ -142,14 +142,6 @@ section > .media-page__sub-title {
   color: var(--primary-font);
 }
 
-/* 360 */
-
-@media (min-width: 375px){
-}
-
-@media (min-width: 411px){
-}
-
 @media (min-width: 768px){
   .media-page__head {
     justify-content:center;
@@ -182,9 +174,6 @@ section > .media-page__sub-title {
   .media-page__genres--wrapper {
     width: 75%;
   }
-}
-
-@media (min-width: 1024px){
 }
 
 @media (min-width: 1366px){
