@@ -1,7 +1,9 @@
 .bookmark-button {
   cursor: pointer;
   font-size: 2em;
-  transform: translate(0, -.2em);
+  -webkit-transform: translate(0, -.2em);
+      -ms-transform: translate(0, -.2em);
+          transform: translate(0, -.2em);
 }
 
 .bookmarked {

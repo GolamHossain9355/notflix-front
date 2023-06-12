@@ -1,9 +1,16 @@
 .bookmarks__bookmark {
   aspect-ratio: 9/14;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #000000;
   border: 2px solid var(--dark-red);
   border-radius: 5px;
@@ -17,8 +24,12 @@
 
 .bookmarks_bookmark--remove-button {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: var(--bright-red);
   margin: .3em;
   border: 2px solid var(--bright-red);
@@ -37,11 +48,16 @@
   color: white;
 }
 .bookmarks_bookmark--remove-button--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .bookmark__grid {
+  display: -ms-grid;
   display: grid;
   grid-template-rows: repeat(2, fit-content(100%));
   background-color: rgba(0, 0, 0, .5);
@@ -52,9 +68,15 @@
 }
 
 .bookmarks_bookmark--title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 1.2em;
   font-family: Georgia, Sans-Serif;
   margin-bottom: 0.1em;
@@ -62,9 +84,15 @@
 }
 
 .bookmarks_bookmark--info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: var(--primary-font);
   font-size: .9em;
   font-family: Serif;
@@ -75,19 +103,27 @@
   position: absolute;
   left: 0;
   top: 0;
+  height: -webkit-fill-available;
+  height: -moz-available;
   height: stretch;
   width: 100%;
   opacity: 0.65;
   z-index: 1;
+  -webkit-transition: opacity 100ms ease-in-out;
+  -o-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
 }
 .bookmarks__bookmark--image:hover {
   opacity: 0.90;
+  -webkit-transition: opacity 85ms ease-in-out;
+  -o-transition: opacity 85ms ease-in-out;
   transition: opacity 85ms ease-in-out;
 }
 
 .lighten-image{
   opacity: 0.80;
+  -webkit-transition: opacity 85ms ease-in-out;
+  -o-transition: opacity 85ms ease-in-out;
   transition: opacity 85ms ease-in-out;
 }
 
