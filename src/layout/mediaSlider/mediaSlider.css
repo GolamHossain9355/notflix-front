@@ -6,6 +6,7 @@
 }
 
 .media-slider__grid {
+  display: -ms-grid;
   display: grid;
   grid-template-rows: repeat(3,auto);
 }
@@ -17,9 +18,15 @@
 }
 
 .media-slider__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 h2.media-slider__head--title {
@@ -43,8 +50,12 @@ h2.media-slider__head--title {
 }
 
 .media-slider__card-deck {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   overflow-x: scroll;
   overflow-y: hidden;
   margin-top: .2em;

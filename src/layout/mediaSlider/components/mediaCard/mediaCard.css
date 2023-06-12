@@ -3,10 +3,14 @@
   display: block;
   margin: 0 auto;
   scale: .97;
+  -webkit-transition: scale 0.3s ease-in-out;
+  -o-transition: scale 0.3s ease-in-out;
   transition: scale 0.3s ease-in-out;
 }
 .media-slider__card:hover {
   scale: 1;
+  -webkit-transition: scale 0.15s ease-in-out;
+  -o-transition: scale 0.15s ease-in-out;
   transition: scale 0.15s ease-in-out;
 }
 .media-slider__card--image {

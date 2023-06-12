@@ -42,7 +42,9 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   border: none !important;
-  box-shadow: 0 0 0 2px var(--form-input-color);
+  -webkit-box-shadow: 0 0 0 2px var(--form-input-color);
+          box-shadow: 0 0 0 2px var(--form-input-color);
+  -webkit-transition: background-color 500000s ease-in-out 0s !important;
   transition: background-color 500000s ease-in-out 0s !important;
   caret-color: white;
 }
@@ -63,7 +65,8 @@ input:-webkit-autofill:active {
 }
 
 input:-webkit-autofill:focus {
-  box-shadow: 0 0 0 2px white !important;
+  -webkit-box-shadow: 0 0 0 2px white !important;
+          box-shadow: 0 0 0 2px white !important;
 }
 
 body {
@@ -103,6 +106,8 @@ body {
 
   .mainscreen {
     padding-left: var(--menu-active-width);
+    -webkit-transition: padding-left var(--fast-transition-speed) ease-in-out;
+    -o-transition: padding-left var(--fast-transition-speed) ease-in-out;
     transition: padding-left var(--fast-transition-speed) ease-in-out;
   }
   .mainscreen.inactive {
@@ -112,7 +117,4 @@ body {
   .no-scroll {
     overflow-y: auto;
   }
-}
-
-@media (min-width: 1920px){
 }

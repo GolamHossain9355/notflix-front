@@ -1,20 +1,30 @@
 .nav__static-window {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: fixed;
   background: var(--bg-color);
   color: black;
   width: 100%;
   min-height: 100%;
-  transform: translate(0%,0);
+  -webkit-transform: translate(0%,0);
+      -ms-transform: translate(0%,0);
+          transform: translate(0%,0);
+  -webkit-transition: -webkit-transform var(--fast-transition-speed) ease-in-out;
+  transition: -webkit-transform var(--fast-transition-speed) ease-in-out;
+  -o-transition: transform var(--fast-transition-speed) ease-in-out;
   transition: transform var(--fast-transition-speed) ease-in-out;
+  transition: transform var(--fast-transition-speed) ease-in-out, -webkit-transform var(--fast-transition-speed) ease-in-out;
   z-index: 9998;
 }
 .nav__static-window.inactive {
-  transform: translate(-100%,0);
+  -webkit-transform: translate(-100%,0);
+      -ms-transform: translate(-100%,0);
+          transform: translate(-100%,0);
 }
 
 .nav__wrapper {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
 }
 
