@@ -1,5 +1,5 @@
-Front-End: Michael Slaton 97%
+Front-End: Michael Slaton
 
-Back-End: Golam Hossain 100%
+Back-End: Golam Hossain
 
 [Live Demo](https://notflix-front.vercel.app/)
